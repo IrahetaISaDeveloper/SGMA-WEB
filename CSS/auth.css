@@ -1,0 +1,107 @@
+/* From Uiverse.io by satyamchaudharydev */
+body {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url(backround-2-flat.png);
+    display: flex;
+    justify-content: center;
+    /* Centra horizontalmente */
+    align-items: center;
+    /* Centra verticalmente */
+    min-height: 100vh;
+    /* Asegura que el body ocupe al menos toda la altura de la ventana */
+    margin: 0;
+    /* Elimina los márgenes predeterminados del body */
+}
+
+.card {
+    width: 400px;
+    /* Aumenta el ancho */
+    height: auto;
+    /* Ajusta la altura automáticamente según el contenido */
+    padding: 30px;
+    /* Aumenta el espacio interno */
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 20px;
+    /* Aumenta el espacio entre los elementos */
+    background: rgba(40, 40, 40, 1);
+    border-radius: 20px;
+    box-shadow: 0 4px 8px rgba(209, 202, 202, 0.1);
+    /* Añade una sombra suave para destacar */
+}
+
+.card>* {
+    margin: 0;
+}
+
+.card img{
+    width: 200px;
+}
+
+.card__title {
+    font-size: 32px;
+    /* Aumenta el tamaño del título */
+    font-weight: 900;
+    color: rgba(255, 255, 255, 1);
+}
+
+.card__content {
+    font-size: 22px;
+    /* Aumenta el tamaño del contenido */
+    line-height: 30px;
+    color: rgba(255, 204, 0, 1);
+    /* Un color ligeramente más claro para el texto */
+}
+
+.card__form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    /* Aumenta el espacio entre los elementos del formulario */
+    width: 80%;
+    /* Ocupa un mayor porcentaje del ancho de la tarjeta */
+}
+
+.card__form input {
+    margin-top: 0;
+    /* Elimina el margen superior innecesario */
+    outline: 0;
+    background: #f9f9f9;
+    /* Un fondo ligeramente grisáceo para el input */
+    box-shadow: transparent 0px 0px 0px 1px inset;
+    padding: 12px;
+    /* Aumenta el padding del input */
+    border-radius: 14px;
+    border: 1px solid #ccc;
+    /* Un borde más claro */
+    color: #333;
+    font-size: 16px;
+    /* Aumenta el tamaño del texto del input */
+}
+
+.card__form button {
+    border: 0;
+    background: rgba(197, 26, 29, 1);
+    color: #fff;
+    padding: 14px;
+    /* Aumenta el padding del botón */
+    border-radius: 14px;
+    font-weight: bold;
+    font-size: 18px;
+    /* Aumenta el tamaño del texto del botón */
+    cursor: pointer;
+    /* Añade un cursor al pasar por encima */
+    transition: background-color 0.3s ease;
+    /* Añade una transición suave para el hover */
+}
+
+.sign-up:hover {
+    background-color: rgba(135, 31, 31, 1);
+    /* Un color ligeramente más oscuro al pasar el ratón */
+    opacity: 1;
+    /* Asegura que la opacidad no cambie al hacer hover */
+}
