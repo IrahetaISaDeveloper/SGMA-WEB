@@ -1,0 +1,40 @@
+//USAR SOLAMENTE EN EL LABORATORIO, EN CASA UNA VEZ EJECUTADO NO SE VUELVE A EJECUTAR
+
+git config --global user.name "    "
+
+git config --global user.email "  "
+
+git config -global init.defaultBranch main
+
+***************************************************************************************
+//PARA INICIAR EL REPOSITORIO
+
+git init
+
+*****************************************
+//PARA PREPARAR LOS ARCHIVOS QUE SE VAN A ENVIAR AL REPOSITORIO *NUEVOS O MODIFICADOS*
+
+git add .
+
+****************************************
+//PARA AGREGAR LOS CAMBIOS AL REPOSITORIO 
+
+git commit -m " *descripcion de los cambios * "
+
+**************************************************
+//PARA ENLAZAR EL REPOSITORIO LOCAL CON EL REMOTO(NUBE) *SOLO SE HACE UNA VEZ*
+
+git remote add origin *url*
+
+git branch -M main
+
+git push -u origin main
+
+********************************************************************************
+//PARA SOLO SUBIR LOS CAMBIOS REALIZADOS 
+
+git add .
+
+git commit -m " mensaje o descripcion "
+
+git push origin main 
