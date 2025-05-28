@@ -101,3 +101,22 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         });
     });
 });
+
+/*
+// --- NUEVO CÓDIGO PARA MOSTRAR EL NOMBRE DE USUARIO EN EL NAVBAR ---
+document.addEventListener('DOMContentLoaded', function() {
+    // 1. Intentar obtener el nombre de usuario guardado en localStorage.
+    const savedUserName = localStorage.getItem('userNameToDisplay');
+
+    // 2. Encontrar el elemento del navbar donde queremos mostrar el nombre.
+    const userNameNavElement = document.getElementById('nombre-usuario-nav');
+
+    // 3. Si encontramos el nombre de usuario guardado y el elemento en el navbar...
+    if (savedUserName && userNameNavElement) {
+        // ...entonces mostramos el nombre.
+        userNameNavElement.textContent = `Ing. ${savedUserName}`; // Añadimos "Ing." como en tu imagen
+    }
+    // Si no se encuentra el nombre, el espacio quedará vacío.
+    // Opcionalmente, podrías agregar un 'else' para redirigir al login si no hay sesión.
+});
+*/

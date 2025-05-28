@@ -330,3 +330,48 @@ nav a:hover {
     height: 1em;
     vertical-align: middle; /* Alinea verticalmente con el texto */
 }
+
+/*Boton de cerrar sesión*/
+/* Estilos para la clase 'btn' que usas en el botón */
+.btn {
+    /* Fondo del botón */
+    background-color: #383838; /* Un gris oscuro similar al navbar */
+    /* Color del texto */
+    color: #FDD835; /* Un amarillo vibrante */
+
+    /* Relleno interno para que el texto no esté pegado a los bordes */
+    padding: 8px 15px; /* 8px arriba/abajo, 15px izquierda/derecha */
+
+    /* Bordes redondeados */
+    border-radius: 20px; /* Un valor alto para hacerlos muy redondeados */
+    /* Puedes ajustar este valor si quieres menos redondeado */
+
+    /* Borde alrededor del botón */
+    border: 1px solid #4D4D4D; /* Un borde delgado, un poco más claro que el fondo */
+
+    /* Para que el texto no tenga subrayado (común en los 'a' de los botones) */
+    text-decoration: none;
+
+    /* Para que el texto no esté en negrita por defecto si el navegador lo hace */
+    font-weight: normal;
+
+    /* Opcional: Cambia el cursor a una mano cuando pasas por encima */
+    cursor: pointer;
+
+    /* Opcional: Transición suave para efectos hover */
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+/* Estilos para cuando el mouse pasa por encima del botón */
+.btn:hover {
+    background-color: #4D4D4D; /* Un poco más claro al pasar el mouse */
+    border-color: #FDD835; /* El borde se vuelve amarillo al pasar el mouse */
+}
+
+/* Si tu navbar tiene un 'li' envolviendo el 'a.btn',
+   puedes necesitar ajustar el margen para que el botón no esté pegado a otros elementos. */
+/* Por ejemplo, si el botón está en el último li y quieres que esté un poco separado: */
+nav ul li:last-child {
+    margin-left: 20px; /* Separa el último elemento (el botón) de los anteriores */
+    /* Ajusta este valor según el espacio que necesites */
+}

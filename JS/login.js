@@ -40,4 +40,3 @@ document.getElementById('login-btn').addEventListener('click', function() {
         alert('Por favor, ingresa tus credenciales.');
     }
 });
-
