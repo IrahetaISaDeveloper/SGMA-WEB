@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Seguimiento de Vehículo</title>
+    <link rel="stylesheet" href="CSS/style.css" />
+    <link rel="stylesheet" href="CSS/tracker.css" />
+  </head>
+  <body>
+    <header>
+      <a href="login.html" class="back-button">Volver</a>
+      <h1>Seguimiento de Vehículo</h1>
+    </header>
+    <main class="client-view">
+      <section class="tracking-form">
+        <h2>Consultar Estado de Vehículo</h2>
+        <form id="trackingForm">
+          <div class="form-group">
+            <label for="placa">Número de Placa:</label>
+            <input
+              type="text"
+              id="placa"
+              name="placa"
+              required
+              placeholder="Ej: ABC-123"
+            />
+          </div>
+          <button type="submit" class="button">Buscar</button>
+        </form>
+      </section>
+
+      <section id="vehicleInfo" class="hidden">
+        <h2>Información del Vehículo</h2>
+        <div class="info-card">
+          <p><strong>Placa:</strong> <span id="infoPlaca"></span></p>
+          <p><strong>Modelo:</strong> <span id="infoModelo"></span></p>
+          <p><strong>Estado:</strong> <span id="infoEstado"></span></p>
+          <div class="progress-bar-container">
+            <div class="progress-bar" id="progressBar" style="width: 50%"></div>
+            <span id="progressPercentage">50%</span>
+          </div>
+        </div>
+
+        <section class="updates-log">
+          <h3>Bitácora de Actualizaciones</h3>
+          <ul id="updatesList">
+            <li>2023-10-26: Recepción del vehículo para diagnóstico.</li>
+            <li>
+              2023-10-27: Diagnóstico completado. Se encontraron los siguientes
+              problemas...
+            </li>
+          </ul>
+        </section>
+      </section>
+    </main>
+    <footer>
+      <p>&copy; 2025 Sistema de Gestión de Mantenimiento Automotríz</p>
+    </footer>
+    <script src="JS/cliente.js"></script>
+  </body>
+</html>

@@ -4,7 +4,6 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Seguimiento de vehículo</title>
-    <!--FAVICON-->
     <link
       rel="apple-touch-icon"
       sizes="180x180"
@@ -23,7 +22,6 @@
       href="imgs/favicon/favicon-16x16.png"
     />
     <link rel="manifest" href="imgs/favicon/site.webmanifest" />
-    <!--CSS-->
     <link rel="stylesheet" href="CSS/auth.css" />
   </head>
 
@@ -38,8 +36,12 @@
           Ingresa tu número de placa, tarjeta de circulación o tu DUI.
         </p>
         <div class="card__form">
-          <input placeholder="P000-000" type="text" />
-          <button class="sign-up">Ver seguimiento</button>
+          <input
+            id="vehicleIdentifierInput"
+            placeholder="P000-000"
+            type="text"
+          />
+          <button id="trackButton" class="sign-up">Ver seguimiento</button>
         </div>
       </div>
     </main>
