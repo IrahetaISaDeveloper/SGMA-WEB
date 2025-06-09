@@ -29,22 +29,35 @@
     <main>
       <div class="card">
         <img src="imgs/logo rical.png" alt="Logo Ricaldone" />
-        <span class="card__title"
-          >Sistema de Gestión de Mantenimieto Automotríz</span
-        >
+        <span class="card__title">Sistema de Gestión de Vehículos</span>
         <p class="card__content">
           Ingresa tu número de placa, tarjeta de circulación o tu DUI.
         </p>
         <div class="card__form">
           <input
-            id="vehicleIdentifierInput"
+            id="placa"
+            name="placa"
             placeholder="P000-000"
             type="text"
           />
-          <button id="trackButton" class="sign-up">Ver seguimiento</button>
+          <button type="button" class="button" id="verSeguimientoBtn">
+            Ver seguimiento
+          </button>
         </div>
       </div>
     </main>
     <script src="JS/auth.js"></script>
+    <script>
+      // auth.js or inline script for handling navigation
+      document
+        .getElementById("verSeguimientoBtn")
+        .addEventListener("click", function () {
+          const placa = document.getElementById("placa").value;
+          // Redirect to tracker.html and pass the placa as a URL parameter
+          window.location.href = `tracker.html?placa=${encodeURIComponent(
+            placa
+          )}`;
+        });
+    </script>
   </body>
 </html>

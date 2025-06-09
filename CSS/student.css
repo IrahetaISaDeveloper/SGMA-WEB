@@ -1,0 +1,67 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-color: rgba(40, 40, 40, 1); /* negro */
+  color: rgba(255, 255, 255, 1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.container {
+  text-align: center;
+}
+
+h1 {
+  font-size: 1.8rem;
+  margin-bottom: 40px;
+}
+
+.nombre {
+  font-weight: bold;
+  color: rgba(255, 255, 255, 1);
+}
+
+.card {
+  background-color: rgba(255, 255, 255, 1);
+  padding: 30px 20px;
+  border-radius: 20px;
+  margin: 20px auto;
+  width: 300px;
+  box-shadow: 0 0 0px rgba(40, 40, 40, 1);
+  color: rgba(40, 40, 40, 1);
+}
+
+.card img {
+  width: 80px;
+  height: 80px;
+  margin-bottom: 20px;
+}
+
+.btn {
+ /* Tu código CSS existente */
+  background-color: rgba(136, 31, 30, 1); 
+  color: rgba(255, 255, 255, 1);
+  padding: 12px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  /* margin-top: 10px;  <-- Reemplaza esta línea */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  box-shadow: 2px 2px 8px rgba(136, 31, 30, 1);
+  
+  /* --- LÍNEAS A AGREGAR --- */
+  display: block; /* Asegura que ocupe su propio espacio */
+  margin: 10px auto 0; /* 10px arriba, auto a los lados, 0 abajo */
+}
+
+.btn .flecha {
+  font-size: 18px;
+}

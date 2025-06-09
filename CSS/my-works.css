@@ -1,0 +1,155 @@
+/* --- ESTILOS GENERALES Y DE BASE --- */
+body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    background-color: #1E1E1E; /* Fondo oscuro principal */
+    color: #FFFFFF;
+}
+
+.main-container {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+    font-weight: 700;
+    margin-bottom: 25px;
+}
+
+h2 {
+    font-size: 1.1em;
+    font-weight: 700;
+    margin: 0 0 12px 0;
+}
+
+p {
+    margin: 0;
+}
+
+/* --- ESTILO DE LAS TARJETAS DE TRABAJO --- */
+.jobs-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Espacio entre las tarjetas */
+}
+
+.job-card {
+    background-color: #2D2D2D; /* Fondo de la tarjeta */
+    border-radius: 16px;
+    display: flex;
+    overflow: hidden; /* Clave para que la imagen no se salga de los bordes redondeados */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* --- SECCIÓN DE LA IMAGEN (IZQUIERDA) --- */
+.card-image {
+    flex-shrink: 0; /* Evita que la imagen se encoja */
+    width: 300px;
+    position: relative; /* Necesario para el texto superpuesto */
+}
+
+.card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Hace que la imagen cubra el espacio sin deformarse */
+}
+
+.image-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+    color: white;
+}
+
+.image-overlay .car-model {
+    font-weight: 500;
+    font-size: 0.9em;
+}
+
+.image-overlay .owner-name {
+    font-size: 0.8em;
+    opacity: 0.9;
+}
+
+
+/* --- SECCIÓN DE DETALLES (DERECHA) --- */
+.card-details {
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1; /* Ocupa el espacio restante */
+}
+
+.info-line {
+    font-size: 0.9em;
+    color: #B0B0B0; /* Color de texto secundario */
+    margin-bottom: 5px;
+}
+
+.info-line strong {
+    color: #E0E0E0; /* Texto de etiqueta un poco más brillante */
+}
+
+
+/* --- ESTILOS DE ESTADO (FINALIZADO, EN PROCESO, ETC.) --- */
+.status {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 500;
+    margin: 10px 0;
+    font-size: 1em;
+}
+
+.status svg {
+    width: 20px;
+    height: 20px;
+}
+
+.status.finalizado {
+    color: #66BB6A; /* Verde */
+}
+.status.finalizado svg {
+    fill: #66BB6A;
+}
+
+.status.en-proceso {
+    color: #FFFFFF; /* Blanco */
+}
+
+.status.rechazado {
+    color: #EF5350; /* Rojo */
+}
+.status.rechazado svg {
+    fill: #EF5350;
+}
+
+
+/* --- ENLACE A LA BITÁCORA --- */
+.logbook-link {
+    color: #42A5F5; /* Azul para el enlace */
+    text-decoration: none;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin-top: auto; /* Truco para empujar el enlace al fondo */
+    align-self: flex-start; /* Lo alinea a la izquierda */
+}
+
+.logbook-link svg {
+    width: 20px;
+    height: 20px;
+    fill: #42A5F5;
+    transition: transform 0.2s ease-in-out;
+}
+
+.logbook-link:hover svg {
+    transform: translateX(3px); /* Pequeña animación al pasar el ratón */
+}

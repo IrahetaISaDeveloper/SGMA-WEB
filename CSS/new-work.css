@@ -1,0 +1,326 @@
+/* --- ESTILOS GENERALES Y DE BASE --- */
+body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    background-color: #121212; /* Fondo súper oscuro */
+    color: #FFFFFF;
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Centra verticalmente en la pantalla */
+    min-height: 100vh; /* Ocupa toda la altura de la ventana */
+    padding: 20px; /* Padding general */
+    box-sizing: border-box;
+}
+
+.main-container {
+    background-color: #1E1E1E; /* Fondo principal de la app */
+    width: 100%;
+    max-width: 900px; /* Aumenta el ancho máximo para desktop */
+    padding: 30px; /* Más padding interno */
+    box-sizing: border-box;
+    border-radius: 20px; /* Bordes más redondeados */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5); /* Sombra pronunciada */
+    display: flex; /* Usamos flexbox para organizar las dos secciones principales */
+    gap: 30px; /* Espacio entre la tarjeta resumen y el formulario */
+    flex-wrap: wrap; /* Permite que las secciones se envuelvan en pantallas más pequeñas */
+    align-items: flex-start; /* Alinea los ítems al inicio de la línea cruzada */
+}
+
+h1 {
+    width: 100%; /* Ocupa todo el ancho en el flex container */
+    text-align: center;
+    font-weight: 500;
+    font-size: 2.2em; /* Título más grande */
+    margin-bottom: 25px;
+    color: #E0E0E0;
+}
+
+h2 {
+    font-size: 1.3em; /* Título secundario un poco más grande */
+    font-weight: 500;
+    margin: 0 0 15px 0;
+    color: #E0E0E0;
+}
+
+/* --- TARJETA DE RESUMEN (Summary Card) --- */
+.summary-card {
+    background-color: #2D2D2D;
+    border-radius: 16px;
+    display: flex; /* Flex para imagen y detalles */
+    overflow: hidden;
+    flex-basis: 40%; /* Ocupa aproximadamente el 40% del ancho disponible */
+    min-width: 300px; /* Ancho mínimo para evitar que se comprima demasiado */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Sombra para la tarjeta */
+    flex-grow: 1; /* Permite que crezca para ocupar espacio */
+}
+
+.card-image {
+    flex-shrink: 0;
+    width: 180px; /* Ancho fijo para la imagen */
+    height: auto; /* Altura automática para mantener proporción */
+    position: relative;
+}
+
+.card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Asegura que la imagen cubra el área */
+    display: block;
+}
+
+/* En la imagen de Figma, el overlay de la imagen y los datos del carro no aparecen en la tarjeta de resumen del lado izquierdo,
+   sino que los datos del carro están en la sección de detalles. Si deseas un overlay, descomenta y ajusta: */
+/* .image-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+    color: #FFF;
+}
+.car-model { font-weight: 500; font-size: 0.9em; margin: 0; }
+.owner-name { font-size: 0.8em; opacity: 0.9; margin: 0; }
+*/
+
+.card-details {
+    padding: 20px; /* Más padding */
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.info-line {
+    font-size: 0.95em;
+    color: #B0B0B0;
+    margin-bottom: 8px;
+}
+
+.info-line strong {
+    color: #E0E0E0;
+}
+
+.contact-link {
+    color: #42A5F5;
+    text-decoration: none;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin-top: auto; /* Empuja el enlace al final de los detalles */
+    align-self: flex-start;
+    padding: 5px 0;
+    transition: color 0.2s ease;
+}
+
+.contact-link:hover {
+    color: #64B5F6;
+}
+
+.contact-link svg {
+    width: 18px;
+    height: 18px;
+    fill: #42A5F5;
+}
+
+/* --- SECCIÓN ASIGNAR NUEVO TRABAJO --- */
+.assign-job-section {
+    background-color: #2D2D2D; /* Mismo fondo que la tarjeta */
+    border-radius: 16px;
+    padding: 30px; /* Más padding para el formulario */
+    flex-basis: 55%; /* Ocupa el 55% restante (aprox.) */
+    min-width: 300px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    flex-grow: 1; /* Permite que crezca para ocupar espacio */
+    display: flex;
+    flex-direction: column;
+}
+
+.assign-job-section h2 {
+    font-size: 1.8em; /* Título más grande para la sección del formulario */
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+.form-group {
+    margin-bottom: 20px; /* Más espacio entre grupos de formulario */
+    position: relative; /* Para el posicionamiento del input de tiempo */
+}
+
+.form-group label {
+    display: block;
+    font-size: 0.9em;
+    color: #B0B0B0;
+    margin-bottom: 8px;
+}
+
+.form-group input[type="text"] {
+    width: 100%;
+    padding: 12px 15px; /* Más padding */
+    background-color: #3C3C3C; /* Fondo oscuro para los inputs */
+    border: 1px solid #555;
+    border-radius: 8px; /* Bordes redondeados */
+    color: #E0E0E0;
+    font-size: 1.05em;
+    box-sizing: border-box; /* Incluye padding en el ancho */
+    transition: border-color 0.2s ease;
+}
+
+.form-group input[type="text"]:focus {
+    outline: none;
+    border-color: #42A5F5; /* Borde azul al enfocar */
+}
+
+.checkbox-group {
+    display: flex;
+    align-items: center;
+    gap: 15px; /* Espacio entre checkbox y label */
+    margin-bottom: 25px;
+}
+
+.checkbox-group input[type="checkbox"] {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 24px;
+    height: 24px;
+    background-color: #333;
+    border: 2px solid #555;
+    border-radius: 6px;
+    cursor: pointer;
+    position: relative;
+    flex-shrink: 0;
+    transition: background-color 0.2s, border-color 0.2s;
+}
+.checkbox-group input[type="checkbox"]:checked {
+    background-color: #42A5F5; /* Azul para el checkbox marcado */
+    border-color: #42A5F5;
+}
+.checkbox-group input[type="checkbox"]:checked::before {
+    content: '✔';
+    font-size: 16px;
+    color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.checkbox-group label {
+    margin-bottom: 0; /* Elimina el margen inferior predeterminado del label */
+    font-size: 1em;
+    color: #E0E0E0;
+    cursor: pointer;
+}
+
+.time-input-group {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Espacio entre label y input */
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.time-input-group label {
+    flex-shrink: 0; /* Evita que el label se encoja */
+    margin-bottom: 0;
+}
+
+.time-input-group input[type="text"] {
+    width: 100px; /* Ancho fijo para el input de tiempo */
+    text-align: center;
+    padding: 10px 15px;
+    background-color: #E57373; /* Rojo para el input de tiempo */
+    border-color: #E57373;
+    font-weight: 700;
+    color: white;
+    border-radius: 20px; /* Más redondeado */
+    box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+}
+.time-input-group input[type="text"]:focus {
+    border-color: #EF9A9A;
+}
+
+
+.assign-button {
+    width: 100%;
+    padding: 18px; /* Más padding para el botón */
+    border: none;
+    border-radius: 30px; /* Aún más redondeado */
+    font-size: 1.2em;
+    font-weight: 700;
+    color: white;
+    background-color: #881F1E; /* Rojo oscuro */
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+    transition: background-color 0.2s ease, transform 0.2s ease;
+    margin-top: auto; /* Empuja el botón al final de la sección */
+}
+
+.assign-button:hover {
+    background-color: #A02B2A;
+    transform: translateY(-2px);
+}
+
+/* --- Media Queries para responsividad --- */
+@media (max-width: 768px) {
+    .main-container {
+        flex-direction: column; /* Apila las secciones en pantallas más pequeñas */
+        align-items: center; /* Centra los elementos apilados */
+        padding: 20px;
+        gap: 25px;
+    }
+    .summary-card, .assign-job-section {
+        flex-basis: 100%; /* Ocupa el ancho completo */
+        min-width: unset; /* Elimina el min-width para adaptarse mejor */
+    }
+    .summary-card {
+        flex-direction: column; /* Apila la imagen y los detalles dentro de la tarjeta */
+        align-items: center;
+        text-align: center;
+    }
+    .card-image {
+        width: 100%; /* Imagen al 100% de ancho */
+        height: 200px; /* Altura fija para la imagen */
+    }
+    .card-details {
+        align-items: center;
+    }
+    .contact-link {
+        align-self: center; /* Centra el botón de contacto */
+    }
+    .assign-job-section {
+        padding: 25px;
+    }
+    .assign-job-section h2 {
+        font-size: 1.6em;
+    }
+    .time-input-group {
+        flex-direction: column; /* Apila label e input de tiempo */
+        align-items: flex-start;
+        gap: 8px;
+    }
+    .time-input-group input[type="text"] {
+        width: 100%; /* Ancho completo para el input de tiempo */
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 10px;
+    }
+    .main-container {
+        padding: 15px;
+        border-radius: 10px;
+    }
+    h1 {
+        font-size: 1.8em;
+    }
+    .assign-job-section {
+        padding: 20px;
+    }
+    .btn {
+        padding: 12px;
+        font-size: 1em;
+    }
+}

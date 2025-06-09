@@ -6,57 +6,131 @@
     <title>Seguimiento de Vehículo</title>
     <link rel="stylesheet" href="CSS/style.css" />
     <link rel="stylesheet" href="CSS/tracker.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
   </head>
   <body>
-    <header>
-      <a href="login.html" class="back-button">Volver</a>
-      <h1>Seguimiento de Vehículo</h1>
+    <header class="tracker-header">
+      <a href="auth-tracker.html" class="back-button">Volver</a>
+      <h1>Seguimiento del Vehículo</h1>
     </header>
-    <main class="client-view">
-      <section class="tracking-form">
-        <h2>Consultar Estado de Vehículo</h2>
-        <form id="trackingForm">
-          <div class="form-group">
-            <label for="placa">Número de Placa:</label>
-            <input
-              type="text"
-              id="placa"
-              name="placa"
-              required
-              placeholder="Ej: ABC-123"
-            />
-          </div>
-          <button type="submit" class="button">Buscar</button>
-        </form>
-      </section>
 
-      <section id="vehicleInfo" class="hidden">
-        <h2>Información del Vehículo</h2>
-        <div class="info-card">
-          <p><strong>Placa:</strong> <span id="infoPlaca"></span></p>
-          <p><strong>Modelo:</strong> <span id="infoModelo"></span></p>
-          <p><strong>Estado:</strong> <span id="infoEstado"></span></p>
-          <div class="progress-bar-container">
-            <div class="progress-bar" id="progressBar" style="width: 50%"></div>
-            <span id="progressPercentage">50%</span>
+    <main class="tracker-main">
+      <div class="vehicle-card">
+        <div class="card-header">
+          <span class="record-number">Registro numero: <span id="recordNumber">20250428</span></span>
+        </div>
+        <div class="vehicle-details-container">
+          <div class="vehicle-image">
+            <img src="imgs/volvo.jpg" alt="Vehicle Image" id="vehicleImage" />
+          </div>
+          <div class="vehicle-info-text">
+            <h2 id="infoModelo">Volvo - XC40</h2>
+            <p class="adjustment-status">Ajustes eléctricos completo</p>
+            <p>Placa: <span id="infoPlaca">P258-854</span></p>
+            <p>Estudiante Asignado: <span id="assignedStudent">Manuel Perez</span></p>
+            <p>Módulo: <span id="assignedModule">Sistemas Eléctricos</span></p>
+            <div class="contact-info">
+              <span id="contactName">José E.</span>
+              <a href="#" class="contact-button">Contactar</a>
+            </div>
           </div>
         </div>
 
-        <section class="updates-log">
-          <h3>Bitácora de Actualizaciones</h3>
-          <ul id="updatesList">
-            <li>2023-10-26: Recepción del vehículo para diagnóstico.</li>
-            <li>
-              2023-10-27: Diagnóstico completado. Se encontraron los siguientes
-              problemas...
-            </li>
-          </ul>
-        </section>
-      </section>
+        <div class="progress-section">
+          <div class="progress-bar-container">
+            <div
+              class="progress-bar"
+              id="progressBar"
+              style="width: 85%"
+            ></div>
+            <span id="progressPercentage">85%</span>
+          </div>
+          <div class="progress-time-info">
+            <span id="remainingTime">30 min restantes</span>
+            <span id="totalTime">6h totales</span>
+          </div>
+        </div>
+
+        <div class="repair-tasks-grid">
+          <div class="task-item">
+            <i class="fas fa-lightbulb"></i>
+            <span>Conexión y reparación de luces</span>
+          </div>
+          <div class="task-item">
+            <i class="fas fa-car-door"></i>
+            <span>reparación de puertas y ventanas</span>
+          </div>
+          <div class="task-item">
+            <i class="fas fa-wind"></i>
+            <span>Reparación de Parabrisas</span>
+          </div>
+          <div class="task-item">
+            <i class="fas fa-car-crash"></i>
+            <span>Cambio de Airbag</span>
+          </div>
+          <div class="task-item">
+            <i class="fas fa-eye"></i>
+            <span>Reparación de espejo</span>
+          </div>
+        </div>
+      </div>
     </main>
+
     <footer>
       <p>&copy; 2025 Sistema de Gestión de Mantenimiento Automotríz</p>
     </footer>
-    <script src="JS/cliente.js"></script>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const urlParams = new URLSearchParams(window.location.search);
+        const placa = urlParams.get("placa");
+
+        if (placa) {
+          // Update the placa on the page
+          document.getElementById("infoPlaca").textContent = placa;
+
+          // In a real application, you'd fetch data based on the 'placa'
+          // For demonstration, we'll populate with mock data similar to Figma
+          document.getElementById("recordNumber").textContent = "20250428"; // Example
+          document.getElementById("infoModelo").textContent = "Volvo - XC40";
+          // Assuming 'Estado' from previous implementation maps to 'adjustment-status'
+          // You might have a more detailed status here based on your backend
+          document.querySelector(".adjustment-status").textContent =
+            "Ajustes eléctricos completo";
+          document.getElementById("assignedStudent").textContent = "Manuel Perez";
+          document.getElementById("assignedModule").textContent = "Sistemas Eléctricos";
+          document.getElementById("contactName").textContent = "José E.";
+
+          // Progress Bar (assuming 85% as in Figma)
+          document.getElementById("progressBar").style.width = "85%";
+          document.getElementById("progressPercentage").textContent = "85%";
+          document.getElementById("remainingTime").textContent = "30 min restantes";
+          document.getElementById("totalTime").textContent = "6h totales";
+
+          // Vehicle Image (update if you have dynamic images)
+          // document.getElementById("vehicleImage").src = "path/to/dynamic/image.jpg";
+
+          // For the repair tasks, you would dynamically generate these from fetched data
+          // For now, they are hardcoded in HTML as per the Figma design.
+        } else {
+          // Handle cases where placa is not provided (e.g., direct access)
+          document.getElementById("infoPlaca").textContent =
+            "Placa no especificada";
+          document.getElementById("infoModelo").textContent = "Vehículo Desconocido";
+          document.getElementById("recordNumber").textContent = "N/A";
+          document.querySelector(".adjustment-status").textContent = "Sin Información";
+          document.getElementById("assignedStudent").textContent = "N/A";
+          document.getElementById("assignedModule").textContent = "N/A";
+          document.getElementById("contactName").textContent = "N/A";
+          document.getElementById("progressBar").style.width = "0%";
+          document.getElementById("progressPercentage").textContent = "0%";
+          document.getElementById("remainingTime").textContent = "N/A";
+          document.getElementById("totalTime").textContent = "N/A";
+        }
+      });
+    </script>
   </body>
 </html>
