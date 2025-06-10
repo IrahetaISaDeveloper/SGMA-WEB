@@ -1,0 +1,182 @@
+body {
+    font-family: sans-serif;
+    background-color: #1a1a1a; /* Dark background similar to the image */
+    color: #e0e0e0; /* Light text color */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* Align to the top */
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    background-color: #2c2c2c; /* Slightly lighter dark background for the form container */
+    padding: 30px 5%; /* Padding on top/bottom and 5% on sides */
+    width: 100%; /* Spans full width */
+    min-height: 100vh; /* Spans full height */
+    box-sizing: border-box;
+    border-radius: 0; /* No rounded corners */
+    box-shadow: none; /* No shadow */
+}
+
+h1 {
+    text-align: center;
+    color: #f0f0f0;
+    margin-bottom: 30px;
+    font-size: 2em;
+    padding-top: 20px;
+}
+
+.form-group {
+    margin-bottom: 25px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #cccccc;
+    font-size: 1.1em;
+}
+
+input[type="text"],
+select {
+    width: calc(100% - 20px); /* Account for padding */
+    padding: 14px 10px;
+    border: 1px solid #444;
+    border-radius: 5px;
+    background-color: #3a3a3a;
+    color: #e0e0e0;
+    font-size: 1.1em;
+    box-sizing: border-box;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+input[type="text"]::placeholder {
+    color: #888;
+}
+
+small {
+    display: block;
+    margin-top: 5px;
+    color: #999;
+    font-size: 0.9em;
+}
+
+/* Custom Checkbox Styling */
+.checkbox-group {
+    display: flex;
+    flex-wrap: wrap; /* Allows checkboxes to wrap to next line on smaller screens */
+    gap: 20px; /* Space between checkbox items */
+    margin-top: 10px;
+}
+
+.checkbox-container {
+    display: block;
+    position: relative;
+    padding-left: 30px; /* Space for the custom checkbox */
+    margin-bottom: 10px;
+    cursor: pointer;
+    font-size: 1em;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    color: #e0e0e0; /* Text color for checkbox labels */
+}
+
+.checkbox-container input[type="checkbox"] {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 22px; /* Size of the custom checkbox */
+    width: 22px;
+    background-color: #444; /* Background of unchecked checkbox */
+    border: 1px solid #666;
+    border-radius: 4px; /* Slightly rounded corners for checkbox */
+}
+
+.checkbox-container:hover input ~ .checkmark {
+    background-color: #555;
+}
+
+.checkbox-container input:checked ~ .checkmark {
+    background-color: #4CAF50; /* Green when checked */
+    border-color: #4CAF50;
+}
+
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+.checkbox-container input:checked ~ .checkmark:after {
+    display: block;
+}
+
+.checkbox-container .checkmark:after {
+    left: 7px; /* Position of the checkmark */
+    top: 3px;
+    width: 6px;
+    height: 12px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+
+/* Custom Select Arrow */
+.select-wrapper {
+    position: relative;
+    width: 100%;
+}
+
+.select-wrapper select {
+    padding-right: 35px; /* Space for the custom arrow */
+}
+
+.select-wrapper::after {
+    content: '▼';
+    font-size: 0.8em;
+    color: #ccc;
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+}
+
+/* Specific styling for the time input row */
+.time-inputs-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px; /* Space between the two time input groups */
+}
+
+.time-input-group {
+    flex: 1; /* Each group takes equal space */
+}
+
+.time-input-group label {
+    text-align: left; /* Align labels to the left above inputs */
+}
+
+.time-input-group input[type="text"] {
+    width: 100%; /* Make inputs fill their respective group */
+}

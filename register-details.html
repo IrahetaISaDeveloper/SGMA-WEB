@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalles orden de trabajo</title>
+    <link rel="stylesheet" href="CSS/register-details.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Detalles orden de trabajo</h1>
+
+        <form>
+            <div class="form-group">
+                <label>Nivel de atención:</label>
+                <div class="checkbox-group">
+                    <label class="checkbox-container">1er Año
+                        <input type="checkbox" name="nivelAtencion" value="1er_anio">
+                        <span class="checkmark"></span>
+                    </label>
+                    <label class="checkbox-container">2do Año
+                        <input type="checkbox" name="nivelAtencion" value="2do_anio">
+                        <span class="checkmark"></span>
+                    </label>
+                    <label class="checkbox-container">3er Año
+                        <input type="checkbox" name="nivelAtencion" value="3er_anio">
+                        <span class="checkmark"></span>
+                    </label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="instructorResponsable">Instructor responsable</label>
+                <input type="text" id="instructorResponsable" placeholder="Nombre">
+            </div>
+
+            <div class="form-group">
+                <label for="estudianteAsignado">Estudiante asignado</label>
+                <input type="text" id="estudianteAsignado" placeholder="Nombre">
+            </div>
+
+            <div class="form-group">
+                <label for="carnet">Carnet</label>
+                <input type="text" id="carnet" placeholder="N° de carnet">
+                <small>Ejemplo: 20260669</small>
+            </div>
+
+            <div class="form-group">
+                <label for="operacionesEfectuar1">Operaciones a efectuar:</label>
+                <div class="select-wrapper">
+                    <select id="operacionesEfectuar1">
+                        <option value="">Escribe</option>
+                        <option value="operacion1">Operación 1</option>
+                        <option value="operacion2">Operación 2</option>
+                        <option value="operacion3">Operación 3</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="moduloRespuesta">Modulo al que da respuesta la practica:</label>
+                <div class="select-wrapper">
+                    <select id="moduloRespuesta">
+                        <option value="">Escribe</option>
+                        <option value="moduloA">Módulo A</option>
+                        <option value="moduloB">Módulo B</option>
+                        <option value="moduloC">Módulo C</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>Operaciones a efectuar:</label>
+                <div class="checkbox-group">
+                    <label class="checkbox-container">Preventivo
+                        <input type="checkbox" name="tipoOperacion" value="preventivo">
+                        <span class="checkmark"></span>
+                    </label>
+                    <label class="checkbox-container">Correctivo
+                        <input type="checkbox" name="tipoOperacion" value="correctivo">
+                        <span class="checkmark"></span>
+                    </label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="tiempoEstimado">Tiempo estimado del proceso:</label>
+                <input type="text" id="tiempoEstimado" placeholder="HH/MM/SS">
+            </div>
+
+            <div class="form-group time-inputs-row">
+                <div class="time-input-group">
+                    <label for="horaIngreso">Hora de ingreso</label>
+                    <input type="text" id="horaIngreso" placeholder="HH/MM/SS">
+                </div>
+                <div class="time-input-group">
+                    <label for="horaSalida">Hora de salida</label>
+                    <input type="text" id="horaSalida" placeholder="HH/MM/SS">
+                </div>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
