@@ -1,7 +1,7 @@
 html {
     scroll-behavior: smooth;
     scroll-padding-top: 60px; /* Ajusta este valor al alto de tu navbar */
-  }
+}
 /* Estilos generales (puedes tener más en tu archivo) */
 body {
     font-family: Helvetica;
@@ -14,20 +14,43 @@ body {
 /* Barra de navegación */
 nav {
     background-color: #333;
-    padding: 15px 0;
-    text-align: center;
+    padding: 15px 20px; /* Añadido padding horizontal */
+    display: flex; /* Usar flexbox para alinear elementos */
+    justify-content: space-between; /* Espacio entre el logo y los elementos de la derecha */
+    align-items: center; /* Centrar verticalmente los elementos */
+    color: white; /* Color de texto general para el navbar */
 }
+
+.nav-left {
+    display: flex;
+    align-items: center;
+    gap: 15px; /* Espacio entre el logo y el texto del sistema */
+}
+
+.logo-nav {
+    height: 65px; /* Ajusta la altura del logo según sea necesario */
+    width: auto;
+}
+
+.system-title {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: white;
+    white-space: nowrap; /* Evita que el texto se rompa en varias líneas */
+}
+
 
 nav ul {
     list-style: none;
     padding: 0;
     margin: 0;
-    display: inline-block;
+    display: flex; /* Usar flexbox para los elementos de la derecha */
+    align-items: center;
 }
 
 nav li {
-    display: inline;
     margin: 0 15px;
+    position: relative; /* Necesario para el dropdown */
 }
 
 nav a {
@@ -41,6 +64,38 @@ nav a {
 nav a:hover {
     color: #f0c14b;
 }
+
+/* Dropdown */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #444;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    border-radius: 5px;
+    top: 100%; /* Posiciona el dropdown debajo del "Cursos" */
+    left: 0;
+}
+
+.dropdown-content a {
+    color: white;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+    font-weight: normal; /* Para que los elementos del dropdown no estén en negrita por defecto */
+}
+
+.dropdown-content a:hover {
+    background-color: #555;
+    color: #f0c14b;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
 
 /* Carousel */
 .carousel-container {
@@ -325,7 +380,7 @@ nav a:hover {
 
 /* Ajustes para la flecha del enlace "Ver Bitácora" */
 .ver-bitacora svg {
-  fill: currentColor; /* Hereda el color del texto */
+    fill: currentColor; /* Hereda el color del texto */
     width: 1em;
     height: 1em;
     vertical-align: middle; /* Alinea verticalmente con el texto */
@@ -337,7 +392,7 @@ nav a:hover {
     /* Fondo del botón */
     background-color: #383838; /* Un gris oscuro similar al navbar */
     /* Color del texto */
-    color: #FDD835; /* Un amarillo vibrante */
+    color: #dc3545; /* Un amarillo vibrante */
 
     /* Relleno interno para que el texto no esté pegado a los bordes */
     padding: 8px 15px; /* 8px arriba/abajo, 15px izquierda/derecha */
@@ -347,7 +402,7 @@ nav a:hover {
     /* Puedes ajustar este valor si quieres menos redondeado */
 
     /* Borde alrededor del botón */
-    border: 1px solid #4D4D4D; /* Un borde delgado, un poco más claro que el fondo */
+    border: 1px solid #dc3545; /* Un borde delgado, un poco más claro que el fondo */
 
     /* Para que el texto no tenga subrayado (común en los 'a' de los botones) */
     text-decoration: none;
@@ -364,12 +419,12 @@ nav a:hover {
 
 /* Estilos para cuando el mouse pasa por encima del botón */
 .btn:hover {
-    background-color: #4D4D4D; /* Un poco más claro al pasar el mouse */
-    border-color: #FDD835; /* El borde se vuelve amarillo al pasar el mouse */
+    background-color: #dc3545; /* Un poco más claro al pasar el mouse */
+    border-color: #4D4D4D; /* El borde se vuelve amarillo al pasar el mouse */
 }
 
 /* Si tu navbar tiene un 'li' envolviendo el 'a.btn',
-   puedes necesitar ajustar el margen para que el botón no esté pegado a otros elementos. */
+    puedes necesitar ajustar el margen para que el botón no esté pegado a otros elementos. */
 /* Por ejemplo, si el botón está en el último li y quieres que esté un poco separado: */
 nav ul li:last-child {
     margin-left: 20px; /* Separa el último elemento (el botón) de los anteriores */
