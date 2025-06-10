@@ -1,66 +1,100 @@
 body {
-    margin: 0;
-    background-image: url(backround-2-flat.png);
-    background-repeat: no-repeat; 
+    font-family: Helvetica; /* Keep Helvetica as requested */
+    background-repeat: no-repeat;
     background-size: cover;
-    font-family: Helvetica;
-    background-size: cover;
+    background-image: url(backround-2-flat.png); /* Ensure this path is correct */
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center;     /* Center vertically */
+    min-height: 100vh;       /* Ensure body takes at least full viewport height */
+    margin: 0;               /* Remove default body margins */
 }
 
 .container {
+    /* The .container in your original login.html already handles centering due to body flexbox,
+       but we keep it for consistency with your HTML. No major changes needed here for layout. */
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    /* height: 100vh; This is now largely handled by body's min-height and flex properties */
+    width: 100%; /* Ensure container takes full width to allow centering of login-form */
 }
 
 .login-form {
-    background: rgb(40,40,40,100);
-    padding: 20px;
-    border-radius: 10px;
-    width: 300px;
+    width: 400px; /* Matching the width of the .card */
+    height: auto; /* Adjust height automatically based on content, like .card */
+    padding: 30px; /* Matching padding of the .card */
     text-align: center;
-    color: #fff;
+    display: flex; /* Use flexbox for internal alignment */
+    align-items: center; /* Center items vertically within the flex container */
+    justify-content: center; /* Center items horizontally within the flex container */
+    flex-direction: column; /* Stack items vertically */
+    gap: 20px; /* Increase space between elements, matching .card */
+    background: rgba(40, 40, 40, 1); /* Matching background of .card */
+    border-radius: 20px; /* Matching border-radius of .card */
+    box-shadow: 0 4px 8px rgba(209, 202, 202, 0.1); /* Matching shadow of .card */
+    color: #fff; /* Keep text white */
+}
+
+.login-form > * {
+    margin: 0; /* Remove default margins from direct children to allow gap to control spacing */
 }
 
 .logo {
-    width: 80px;
-    margin-bottom: 20px;
+    width: 200px; /* Matching the logo size of the .card */
+    /* margin-bottom: 20px; Removed, as gap handles spacing */
 }
 
 h2 {
-    margin: 10px 0;
+    font-size: 32px; /* Matching the title size of the .card */
+    font-weight: 900; /* Matching font-weight of the .card title */
+    color: rgba(255, 255, 255, 1); /* Ensure it's white */
+    /* margin: 10px 0; Removed, as gap handles spacing */
 }
 
 p {
-    margin-bottom: 20px;
+    font-size: 22px; /* Matching the content size of the .card */
+    line-height: 30px; /* Matching line-height of the .card content */
+    color: rgba(255, 204, 0, 1); /* Matching color of the .card content */
+    /* margin-bottom: 20px; Removed, as gap handles spacing */
 }
 
 input {
-    width: 75%;
-    padding: 10px;
-    margin: 10px 0;
-    border: none;
-    border-radius: 5px;
+    width: 80%; /* Matching the width of inputs in .card__form */
+    padding: 12px; /* Matching padding of inputs in .card__form */
+    margin-top: 0; /* Remove top margin */
+    margin-bottom: 0; /* Remove bottom margin (gap handles it) */
+    outline: 0; /* Remove outline */
+    background: #f9f9f9; /* Matching background of inputs in .card__form */
+    box-shadow: transparent 0px 0px 0px 1px inset; /* Matching shadow of inputs */
+    border-radius: 14px; /* Matching border-radius of inputs */
+    border: 1px solid #ccc; /* Matching border of inputs */
+    color: #333; /* Matching text color of inputs */
+    font-size: 16px; /* Matching font size of inputs */
 }
 
 button {
-    width: 100%;
-    padding: 10px;
-    background-color: red;
-    border: none;
-    border-radius: 5px;
-    color: white;
+    width: 80%; /* Matching the width of the button in .card__form */
+    padding: 14px; /* Matching padding of the button in .card__form */
+    background-color: rgba(197, 26, 29, 1); /* Matching background of the button in .card__form */
+    border: 0; /* Remove border */
+    border-radius: 14px; /* Matching border-radius of the button */
+    color: #fff; /* Matching text color */
+    font-weight: bold; /* Matching font-weight */
+    font-size: 18px; /* Matching font size of the button */
     cursor: pointer;
+    transition: background-color 0.3s ease; /* Matching transition */
+    /* margin-top: 0; Removed as gap handles spacing */
 }
 
 button:hover {
-    background-color: darkred;
+    background-color: rgba(135, 31, 31, 1); /* Matching hover background color */
 }
 
 .link {
     display: block;
-    margin-top: 15px;
+    margin-top: 0; /* Removed, as gap handles spacing for the link */
     color: #ffcc00;
     text-decoration: none;
+    font-size: 16px; /* Adjust font size to fit well */
 }
