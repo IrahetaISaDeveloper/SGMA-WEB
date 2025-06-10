@@ -1,0 +1,207 @@
+body {
+    font-family: sans-serif;
+    background-color: #1a1a1a; /* Dark background */
+    color: #e0e0e0; /* Light text color */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    background-color: #2c2c2c; /* Container background */
+    padding: 30px 5%; /* Padding on top/bottom and 5% on sides */
+    width: 100%; /* Spans full width */
+    min-height: 100vh; /* Spans full height */
+    box-sizing: border-box;
+    border-radius: 0;
+    box-shadow: none;
+}
+
+h1 {
+    text-align: center;
+    color: #f0f0f0;
+    margin-bottom: 30px;
+    font-size: 2em;
+    padding-top: 20px;
+}
+
+.terms-content {
+    background-color: #3a3a3a; /* Background for terms text area */
+    padding: 25px;
+    border-radius: 8px;
+    margin-bottom: 30px;
+    color: #cccccc;
+    line-height: 1.6;
+    font-size: 1.05em;
+    max-height: 50vh; /* Limit height and make it scrollable if content is too long */
+    overflow-y: auto;
+    border: 1px solid #444; /* Subtle border */
+}
+
+.terms-content p {
+    margin-bottom: 15px; /* Space between paragraphs */
+}
+
+.terms-content p:last-child {
+    margin-bottom: 0;
+}
+
+.form-group {
+    margin-bottom: 25px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #cccccc;
+    font-size: 1.1em;
+}
+
+input[type="text"] {
+    width: calc(100% - 20px); /* Account for padding */
+    padding: 14px 10px;
+    border: 1px solid #444;
+    border-radius: 5px;
+    background-color: #3a3a3a;
+    color: #e0e0e0;
+    font-size: 1.1em;
+    box-sizing: border-box;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+input[type="text"]::placeholder {
+    color: #888;
+}
+
+/* Custom Checkbox for terms and conditions */
+.checkbox-container-terms {
+    display: flex; /* Use flexbox to align text and checkbox */
+    align-items: center; /* Vertically center them */
+    position: relative;
+    padding-left: 35px; /* Space for the custom checkbox */
+    cursor: pointer;
+    font-size: 1.1em; /* Slightly larger text for the acceptance statement */
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    color: #e0e0e0;
+    margin-top: 15px; /* Space from the input above */
+}
+
+.checkbox-container-terms input[type="checkbox"] {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+.checkmark-terms {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 24px; /* Size of the custom checkbox */
+    width: 24px;
+    background-color: #444; /* Background of unchecked checkbox */
+    border: 2px solid #666;
+    border-radius: 4px; /* Slightly rounded corners for checkbox */
+}
+
+.checkbox-container-terms:hover input ~ .checkmark-terms {
+    background-color: #555;
+}
+
+.checkbox-container-terms input:checked ~ .checkmark-terms {
+    background-color: #4CAF50; /* Green when checked */
+    border-color: #4CAF50;
+}
+
+.checkmark-terms:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+.checkbox-container-terms input:checked ~ .checkmark-terms:after {
+    display: block;
+}
+
+.checkbox-container-terms .checkmark-terms:after {
+    left: 8px; /* Position of the checkmark */
+    top: 4px;
+    width: 6px;
+    height: 12px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+.button-group {
+    display: flex;
+    flex-direction: column; /* Stack buttons vertically */
+    gap: 15px; /* Space between buttons */
+    margin-top: 30px; /* Space above buttons */
+}
+
+.btn {
+    padding: 15px 25px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 100%; /* Make buttons span full width */
+    box-sizing: border-box; /* Include padding in width */
+}
+
+.primary-btn {
+    background-color: #4CAF50; /* Green color for Firmar */
+    color: white;
+}
+
+.primary-btn:hover {
+    background-color: #45a049;
+}
+
+.secondary-btn {
+    background-color: #007bff; /* Blue color for Enviar Solicitud */
+    color: white;
+}
+
+.secondary-btn:hover {
+    background-color: #0056b3;
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+    .container {
+        padding: 20px 3%; /* Reduce side padding on smaller screens */
+    }
+
+    h1 {
+        font-size: 1.7em;
+    }
+
+    .terms-content {
+        padding: 15px;
+        font-size: 1em;
+    }
+
+    .btn {
+        font-size: 1.1em;
+        padding: 12px 20px;
+    }
+}
+
+

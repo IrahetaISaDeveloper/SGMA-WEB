@@ -180,3 +180,28 @@ small {
 .time-input-group input[type="text"] {
     width: 100%; /* Make inputs fill their respective group */
 }
+
+
+.footer-actions {
+    grid-column: 1 / -1; /* Ocupa todas las columnas */
+    margin-top: auto; /* Empuja los botones al fondo del main-container */
+    display: flex;
+    gap: 20px; /* Más espacio entre botones */
+    padding-top: 20px; /* Espacio superior */
+    border-top: 1px solid #333; /* Separador */
+}
+
+
+.btn {
+    flex-grow: 1;
+    padding: 18px; /* Más padding para botones más grandes */
+    border: none;
+    border-radius: 30px; /* Aún más redondeado para un estilo "pill" */
+    font-size: 1.2em; /* Texto más grande */
+    font-weight: 700;
+    color: white;
+    background-color: #881F1E; /* Rojo oscuro */
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.4); /* Sombra más suave */
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
