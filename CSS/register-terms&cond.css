@@ -166,7 +166,7 @@ input[type="text"]::placeholder {
 }
 
 .primary-btn {
-    background-color: #4CAF50; /* Green color for Firmar */
+    background-color: rgba(136, 31, 30, 1); /* Green color for Firmar */
     color: white;
 }
 
@@ -175,7 +175,7 @@ input[type="text"]::placeholder {
 }
 
 .secondary-btn {
-    background-color: #007bff; /* Blue color for Enviar Solicitud */
+    background-color: rgba(136, 31, 30, 1); /* Blue color for Enviar Solicitud */
     color: white;
 }
 

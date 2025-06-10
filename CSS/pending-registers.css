@@ -7,8 +7,9 @@ body {
     padding: 0;
     min-height: 100vh;
     display: flex;
-    flex-direction: column; /* For header and main layout stacking */
+    flex-direction: column;
     box-sizing: border-box;
+    overflow-x: hidden; /* Prevent horizontal scroll when menu is open */
 }
 
 .system-dashboard {
@@ -29,6 +30,7 @@ body {
     font-size: 1.2em;
     border-bottom: 1px solid #444;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    z-index: 100; /* Ensure header is above other content */
 }
 
 .dashboard-header .header-left,
@@ -43,22 +45,89 @@ body {
     cursor: pointer;
 }
 
+/* Overlay Menu Styling */
+.overlay-menu {
+    height: 100%;
+    width: 0; /* Initially hidden */
+    position: fixed; /* Stay in place */
+    z-index: 200; /* Sit on top of everything */
+    top: 0;
+    left: 0;
+    background-color: #2c2c2c; /* Same as sidebar background */
+    overflow-x: hidden; /* Disable horizontal scroll */
+    transition: 0.5s; /* 0.5 second transition effect to slide in the menu */
+    padding-top: 60px; /* Place content 60px from the top */
+    color: #e0e0e0;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.overlay-menu.open {
+    width: 280px; /* Width when open */
+}
+
+.overlay-menu .menu-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 25px;
+    background-color: #383838;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: calc(100% - 50px); /* Account for padding */
+    box-sizing: border-box;
+    border-bottom: 1px solid #444;
+}
+
+.overlay-menu .menu-header h3 {
+    margin: 0;
+    color: #f0f0f0;
+    font-size: 1.2em;
+}
+
+.overlay-menu .close-menu {
+    font-size: 1.5em;
+    cursor: pointer;
+    color: #e0e0e0;
+}
+
+.overlay-menu ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 20px; /* Space from menu header */
+}
+
+.overlay-menu ul li a {
+    padding: 15px 25px;
+    text-decoration: none;
+    font-size: 1.1em;
+    color: #cccccc;
+    display: block;
+    transition: 0.3s;
+}
+
+.overlay-menu ul li a:hover {
+    color: #f0f0f0;
+    background-color: #4a4a4a;
+}
+
+
 /* Main Layout (Sidebar + Content) */
 .main-layout {
     display: flex;
-    flex-grow: 1; /* Allows it to take remaining vertical space */
+    flex-grow: 1;
     width: 100%;
 }
 
-/* Sidebar Styling */
+/* Sidebar Styling (Remains as before for the "Registros pendientes" list) */
 .sidebar {
     background-color: #2c2c2c;
     width: 280px; /* Fixed width for sidebar */
-    min-width: 250px; /* Ensure it doesn't get too small */
+    min-width: 250px;
     padding: 20px 0;
     border-right: 1px solid #444;
     box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
-    overflow-y: auto; /* Enable scrolling if records exceed height */
+    overflow-y: auto;
     box-sizing: border-box;
 }
 
@@ -71,7 +140,7 @@ body {
 }
 
 .record-list {
-    padding: 0; /* Remove default padding for list */
+    padding: 0;
 }
 
 .record-item {
@@ -79,19 +148,19 @@ body {
     align-items: center;
     background-color: #383838;
     padding: 15px 20px;
-    margin-bottom: 8px; /* Slightly less space between items in sidebar */
-    border-radius: 0; /* No rounded corners for system feel */
-    border-bottom: 1px solid #444; /* Separator for items */
+    margin-bottom: 8px;
+    border-radius: 0;
+    border-bottom: 1px solid #444;
     cursor: pointer;
     transition: background-color 0.2s ease;
 }
 
 .record-item:hover {
-    background-color: #4a4a4a; /* Hover effect */
+    background-color: #4a4a4a;
 }
 
 .icon-placeholder {
-    width: 45px; /* Slightly smaller icons for sidebar */
+    width: 45px;
     height: 45px;
     background-color: #555;
     border-radius: 50%;
@@ -130,22 +199,22 @@ body {
 
 /* Main Content Area Styling */
 .main-content {
-    flex-grow: 1; /* Takes remaining width */
-    background-color: #1a1a1a; /* Deeper dark background for content area */
+    flex-grow: 1;
+    background-color: #1a1a1a;
     padding: 30px;
-    overflow-y: auto; /* Enable scrolling for content if needed */
+    overflow-y: auto;
     display: flex;
-    flex-direction: column; /* Stack sections vertically */
-    gap: 30px; /* Space between different sections/cards */
+    flex-direction: column;
+    gap: 30px;
     box-sizing: border-box;
 }
 
 .card {
-    background-color: #2c2c2c; /* Card background */
+    background-color: #2c2c2c;
     padding: 25px;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    border: 1px solid #3a3a3a; /* Subtle border for cards */
+    border: 1px solid #3a3a3a;
 }
 
 .card h2 {
@@ -170,7 +239,7 @@ label {
 
 input[type="text"],
 select {
-    width: calc(100% - 22px); /* Account for padding and border */
+    width: calc(100% - 22px);
     padding: 12px 10px;
     border: 1px solid #444;
     border-radius: 5px;
@@ -203,8 +272,8 @@ small {
 }
 
 .checkbox-container, .checkbox-container-terms {
-    display: flex; /* Use flex for alignment */
-    align-items: center; /* Vertically align text and custom checkbox */
+    display: flex;
+    align-items: center;
     position: relative;
     padding-left: 30px;
     cursor: pointer;
@@ -320,7 +389,7 @@ small {
 /* Vehicle Data Specific */
 .car-photo {
     width: 100%;
-    max-width: 400px; /* Adjust as needed */
+    max-width: 400px;
     height: auto;
     display: block;
     margin-top: 10px;
@@ -337,7 +406,7 @@ small {
     color: #cccccc;
     line-height: 1.6;
     font-size: 0.95em;
-    max-height: 250px; /* Limit height and make it scrollable */
+    max-height: 250px;
     overflow-y: auto;
     border: 1px solid #444;
 }
@@ -366,7 +435,7 @@ small {
 }
 
 .primary-btn {
-    background-color: #4CAF50; /* Green */
+    background-color: #4CAF50;
     color: white;
 }
 
@@ -375,7 +444,7 @@ small {
 }
 
 .secondary-btn {
-    background-color: #007bff; /* Blue */
+    background-color: #007bff;
     color: white;
 }
 
@@ -387,13 +456,13 @@ small {
 /* Responsive Adjustments */
 @media (max-width: 768px) {
     .main-layout {
-        flex-direction: column; /* Stack sidebar and main content vertically */
+        flex-direction: column;
     }
 
     .sidebar {
-        width: 100%; /* Sidebar takes full width on small screens */
+        width: 100%;
         border-right: none;
-        border-bottom: 1px solid #444; /* Add bottom border */
+        border-bottom: 1px solid #444;
         box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
     }
 
@@ -431,7 +500,7 @@ small {
     }
 
     .time-inputs-row {
-        flex-direction: column; /* Stack time inputs vertically on small screens */
+        flex-direction: column;
         gap: 15px;
     }
 
