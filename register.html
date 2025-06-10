@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Datos del vehículo</title>
+    <link rel="stylesheet" href="CSS/register.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Datos del vehículo</h1>
+        <form>
+            <div class="form-group">
+                <label for="placa">Placa</label>
+                <input type="text" id="placa" placeholder="N° de placa">
+                <small>Formato: P123-456</small>
+            </div>
+
+            <div class="form-group">
+                <label for="poliza">Póliza</label>
+                <div class="input-with-checkbox">
+                    <input type="text" id="poliza" placeholder="N° de póliza">
+                    <input type="checkbox" id="poliza-checkbox">
+                </div>
+                <small>Formato: P123-456</small>
+            </div>
+
+            <div class="form-group">
+                <label for="marca">Marca</label>
+                <input type="text" id="marca" placeholder="Nombre">
+                <small>Ej: Mazda</small>
+            </div>
+
+            <div class="form-group">
+                <label for="modelo">Modelo</label>
+                <input type="text" id="modelo" placeholder="Modelo">
+                <small>Ej: B2900</small>
+            </div>
+
+            <div class="form-group">
+                <label for="tipo">Tipo</label>
+                <div class="select-wrapper">
+                    <select id="tipo">
+                        <option value="sedan">Sedan</option>
+                        <option value="suv">SUV</option>
+                        <option value="camioneta">Camioneta</option>
+                        <option value="moto">Moto</option>
+                        <option value="otro">Otro</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="color">Color</label>
+                <input type="text" id="color" placeholder="Color">
+                <small>Ej: Blanco</small>
+            </div>
+
+            <div class="form-group">
+                <label for="tarjetaCirculacion">Tarjeta de circulación</label>
+                <input type="text" id="tarjetaCirculacion" placeholder="##">
+                <small>Formato: 0/12345678</small>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
