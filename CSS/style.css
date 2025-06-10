@@ -216,6 +216,7 @@ nav a:hover {
 
 .boton-año:hover {
     background-color: #a00000;
+    color: black;
 }
 
 /* Sección de Registros en curso */
