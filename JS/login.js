@@ -25,7 +25,7 @@ document.getElementById('login-btn').addEventListener('click', function() {
         // Redirect based on role
         switch(role) {
             case 'student':
-                window.location.href = 'student-index.html'; // Student home page
+                window.location.href = 'student.html'; // Student home page
                 break;
             case 'leader':
                 window.location.href = 'coordinator-index.html'; // Leader home page
