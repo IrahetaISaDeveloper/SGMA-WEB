@@ -1,0 +1,134 @@
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #121212; /* Fondo oscuro general */
+    color: #E0E0E0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 2rem;
+    box-sizing: border-box; /* Asegura que el padding no afecte el ancho total */
+}
+
+/* --- Contenedor Principal --- */
+.container {
+    max-width: 800px;
+    width: 100%;
+    background-color: #1E1E1E; /* Fondo del contenedor principal */
+    padding: 2.5rem;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+h1 {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    color: #FFFFFF;
+}
+
+/* --- Tarjeta de Información del Vehículo --- */
+.vehicle-card {
+    background-color: #2C2C2C;
+    border-radius: 15px;
+    padding: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 2rem; /* Espacio entre la imagen y el texto */
+    margin-bottom: 1.5rem;
+}
+
+.vehicle-card img {
+    width: 245px;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 12px;
+    border: 2px solid #444;
+}
+
+.vehicle-info {
+    flex-grow: 1;
+}
+
+.vehicle-info h2 {
+    margin: 0 0 0.5rem 0;
+    font-size: 1.75rem;
+    font-weight: 500;
+    color: #FFFFFF;
+}
+
+.vehicle-info .subtitle {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #FFFFFF;
+    margin-bottom: 1rem;
+}
+
+.vehicle-info p {
+    margin: 0.5rem 0;
+    font-size: 1rem;
+    color: #BDBDBD;
+}
+
+.contact-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #4A90E2;
+    text-decoration: none;
+    font-weight: 500;
+    margin-top: 1rem;
+    transition: color 0.3s ease;
+}
+
+.contact-link:hover {
+    color: #6aa9f0;
+}
+
+.contact-link svg {
+    width: 18px;
+    height: 18px;
+}
+
+/* --- Sección de Observaciones --- */
+.observations-card {
+    background-color: #2C2C2C;
+    border-radius: 15px;
+    padding: 1.5rem 2rem;
+    margin-bottom: 2rem;
+}
+
+.observations-card h2 {
+    margin-top: 0;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #FFFFFF;
+}
+
+.observations-card p {
+    font-size: 1rem;
+    color: #BDBDBD;
+    line-height: 1.6;
+}
+
+/* --- Botón de Envío --- */
+.submit-button {
+    width: 100%;
+    background-color: rgba(136, 31, 30, 1); /* Tono rojo/marrón */
+    color: #FFFFFF;
+    border: none;
+    padding: 1rem;
+    font-size: 1.2rem;
+    font-weight: 700;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.submit-button:hover {
+    background-color: #833232;
+    transform: translateY(-2px);
+}
