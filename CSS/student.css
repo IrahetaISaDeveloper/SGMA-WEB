@@ -56,7 +56,7 @@ h1 {
   align-items: center;
   gap: 10px;
   box-shadow: 2px 2px 8px rgba(136, 31, 30, 1);
-  
+  text-decoration: none;
   /* --- LÍNEAS A AGREGAR --- */
   display: block; /* Asegura que ocupe su propio espacio */
   margin: 10px auto 0; /* 10px arriba, auto a los lados, 0 abajo */

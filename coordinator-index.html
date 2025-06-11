@@ -35,7 +35,7 @@
                 <a href="pending-registers.html">3er año</a>
             </div>
         </li>
-        <li><a href="#pendientes">Registros</a></li>
+        <li><a href="#modulos">Modulos</a></li>
         <li>
             <a href="login.html" class="btn">Cerrar Sesión</a>
         </li>
@@ -43,7 +43,7 @@
 </nav>
 
   <!--Carrousel-->
-  <div id="musicCarousel" class="carousel slide" data-ride="carousel">
+  <div id="infoCarousel" class="carousel slide" data-ride="carousel">
     <div class="carousel-inner">
       <div class="carousel-item active">
         <img src="imgs/banner-4-mejorado.png" class="d-block w-100" alt="First slide" />
@@ -67,11 +67,11 @@
         </div>
       </div>
     </div>
-    <a class="carousel-control-prev" href="#musicCarousel" role="button" data-slide="prev">
+    <a class="carousel-control-prev" href="#infoCarousel" role="button" data-slide="prev">
       <span class="carousel-control-prev-icon" aria-hidden="true"></span>
       <span class="sr-only">Anterior</span>
     </a>
-    <a class="carousel-control-next" href="#musicCarousel" role="button" data-slide="next">
+    <a class="carousel-control-next" href="#infoCarousel" role="button" data-slide="next">
       <span class="carousel-control-next-icon" aria-hidden="true"></span>
       <span class="sr-only">Siguiente</span>
     </a>
@@ -79,29 +79,10 @@
 
   <main>
     <main>
-      <div id="seccion-cursos">
-        <div class="curso-titulo">
-          <h1>Cursos</h1>
-        </div>
-        <div id="cursos">
-          <div class="curso-contenedor">
-            <img src="imgs/curso-1.png" alt="Imagen Primer Año" class="imagen-curso" />
-            <a href="pending-registers.html" class="boton-año" style="text-decoration: none;">Primer año</a>
-          </div>
-          <div class="curso-contenedor">
-            <img src="imgs/curso-2.png" alt="Imagen Segundo Año" class="imagen-curso" />
-            <a href="pending-registers.html" class="boton-año" style="text-decoration: none;">Segundo Año</a>
-          </div>
-          <div class="curso-contenedor">
-            <img src="imgs/curso-3.png" alt="Imagen Tercer Año" class="imagen-curso" />
-            <a href="pending-registers.html" class="boton-año" style="text-decoration: none;">Tercer Año</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="registros-en-curso-seccion" id="pendientes">
+    
+      <div class="registros-en-curso-seccion" id="modulos">
         <div class="registros-titulo">
-          <h2>Registros en curso</h2>
+          <h2>Modulos</h2>
         </div>
         <div class="registros-filtros">
           <button class="filtro-año activo" data-año="1">1er Año</button>
@@ -118,8 +99,8 @@
               <p>Estudiante Asignado: Manuel Pérez</p>
               <p>Módulo: Sistemas Eléctricos</p>
               <div class="tarjeta-footer">
-                <span class="tiempo-restante">4h restantes</span>
-                <a href="#" class="ver-bitacora">Ver Bitácora
+                <span class="tiempo-restante"></span>
+                <a href="#" class="ver-bitacora">Ver registros
                   <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                     class="bi bi-arrow-right" viewBox="0 0 16 16">
                     <path fill-rule="evenodd"
@@ -130,7 +111,7 @@
           </div>
 
           <div class="registro-tarjeta" data-año="1">
-            <div class="etiqueta-exporadico">Exporádico</div>
+            <div class="etiqueta-exporadico">En Espera</div>
             <img src="imgs/audi.jpg" alt="BMW X8 - 5.0" />
             <div class="tarjeta-info">
               <h3>BMW X8 - 5.0</h3>
@@ -151,7 +132,7 @@
           </div>
 
           <div class="registro-tarjeta" data-año="2">
-            <div class="etiqueta-urgente">Urgente</div>
+            <div class="etiqueta-urgente">Finalizado</div>
             <img src="imgs/range.jpg" alt="Ranger Black - 2021" />
             <div class="tarjeta-info">
               <h3>Ranger Black - 2021</h3>
